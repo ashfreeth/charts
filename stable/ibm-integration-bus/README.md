@@ -7,17 +7,17 @@ IBM® Integration Bus is a market-leading lightweight enterprise integration eng
 
 # Introduction
 
-This chart deploys a single IBM Integration Bus for Developers integration node, containing a single integration server into an IBM Cloud Private or other Kubernetes environment.
+This chart deploys a single IBM Integration Bus integration node, containing a single integration server into an IBM Cloud Private or other Kubernetes environment.
 
 ## Installing the Chart
 
 To install the chart with the release name `rel1`:
 
 ```bash
-helm install --name rel1 ibm-integration-bus-dev --set license=accept
+helm install --name rel1 ibm-integration-bus --set license=accept
 ```
 
-This command accepts the [IBM Integration Bus for Developers license](LICENSE) and deploys an IBM Integration Bus for Developers server on the Kubernetes cluster. The [configuration](#configuration) section lists the parameters that can be configured during installation.
+This command accepts the [IBM Integration Bus license](LICENSE) and deploys an IBM Integration Bus server on the Kubernetes cluster. The [configuration](#configuration) section lists the parameters that can be configured during installation.
 
 > **Tip**: See all the resources deployed by the chart using `kubectl get all -l release=rel1`
 
@@ -32,13 +32,13 @@ helm delete rel1
 The command removes all the Kubernetes components associated with the chart.
 
 ## Configuration
-The following table lists the configurable parameters of the `ibm-integration-bus-dev` chart and their default values.
+The following table lists the configurable parameters of the `ibm-integration-bus` chart and their default values.
 
 | Parameter                        | Description                                     | Default                                                    |
 | -------------------------------- | ----------------------------------------------- | ---------------------------------------------------------- |
 | `license`                        | Set this to accept the terms of the IBM license | `Not accepted`                                     |
 | `image.repository`               | Image full name including repository            | `ibmcom/iib`                                                |
-| `image.tag`                      | Image tag                                       | `10.0.0.10`                                                        |
+| `image.tag`                      | Image tag                                       | `10.0.0.12`                                                        |
 | `image.pullPolicy`               | Image pull policy                               | `IfNotPresent`                                             |
 | `image.pullSecret`               | Image pull secret, if you are using a private Docker registry | `nil`                                        |
 | `service.type`                   | Kubernetes service type for exposing ports       | `NodePort`                                  |
